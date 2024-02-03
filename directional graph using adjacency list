@@ -1,0 +1,38 @@
+//////creation and printing directional graph using adjacency list representaion
+def addnode(v):
+    if v in graph:
+        print(v,"already existed")
+        
+    else:
+        graph[v]=[]
+def show():
+    for x in graph:
+        print(x,":",graph[x])
+
+
+def addedge(node1,node2):
+    if node1 not in graph:
+        print(node1,"is not available in graph")
+    elif node2 not in graph:
+        print(node2,"is not available in graph")
+    else:
+        graph[node1].append(node2)
+    
+graph={}
+while True:
+    print()
+    print("1.add node\n2.add edge\n3.print graph\n4.exit")
+    ch=int(input("enter a choice:"))
+    if ch==1:
+        v=input("enter node: ")
+        addnode(v)
+    elif ch==2:
+        node1=input("enter node1:")
+        node2=input("enter node2: ")
+        addedge (node1,node2)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("invalid choice")
